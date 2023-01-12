@@ -1,0 +1,1 @@
+This is a Search Engine Marketing (SEM) tool to find a keywords in a text and give the density of the keywords in percentage. It is necessary to have this kind of tools to do Search Engine Optimization in order to not exceed the limits of the search engine rules.
