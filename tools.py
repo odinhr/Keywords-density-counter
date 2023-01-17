@@ -1,21 +1,20 @@
 #!/usr/bin/env python
+import tkinter as tk
+from tkinter import filedialog
 
-def wordCounter(text):
-    text=text.lower()
-    separatedText = text.split()
-    wordsNumber = len(separatedText)
-    return wordsNumber
+def browseFile():
+    filepath = filedialog.askopenfilename()
+    return filepath
 
-def keywordsCounter(text,keyword):
-    text=text.lower()
-    keyword=keyword.lower()
-    counter = text.count(keyword)
-    return counter
-
-def densityCalculator(text,keyword):
-    numberOfKeywords=wordCounter(keyword)
-    totalWords = wordCounter(text)
-    keywordOcurrences = keywordsCounter(text,keyword)
-    densityPercentage = (100*numberOfKeywords*keywordOcurrences)/totalWords
-    return densityPercentage, totalWords
+def countWords(filepath, keywords):
+    with open(filepath, 'r') as f:
+        text = f.read()
+    word_list = text.split()
+    word_count = len(word_list)
+    keyword_count = 0
+    for word in word_list:
+        if word in keywords:
+            keyword_count += 1
+    keyword_percentage = (keyword_count / word_count) * 100
+    return word_count, keyword_percentage
 
