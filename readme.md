@@ -5,3 +5,6 @@ The UI have an entry for the keywords and a file browser to look for the .txt fi
 To launch the script you should use the next command in a console with python 3.9:
 
     python main.py
+
+
+Screenshot.PNG
